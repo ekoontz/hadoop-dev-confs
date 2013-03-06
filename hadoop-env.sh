@@ -1,0 +1,1 @@
+/home/ekoontz/hadoop-runtime/etc/hadoop/hadoop-env.sh
