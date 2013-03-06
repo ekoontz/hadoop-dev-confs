@@ -1,1 +1,73 @@
-/home/ekoontz/hadoop-runtime/etc/hadoop/core-site.xml
+<?xml version="1.0"?>
+<configuration>
+  <property>
+    <name>hadoop.security.authentication</name>
+    <value>kerberos</value>
+  </property>
+  <property>
+    <name>hadoop.security.authorization</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://ekoontz1:8020</value>
+  </property>
+  <property>
+    <name>giraph.zkList</name>
+    <value>localhost:2181</value>
+  </property>
+  <property>
+    <name>giraph.useNetty</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>giraph.SplitMasterWorker</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>ha.zookeeper.quorum</name>
+    <value>eugenes-macbook-pro.local:2181</value>
+  </property>
+
+
+  <property>
+    <name>hadoop.security.group.mapping</name>
+    <value>org.apache.hadoop.security.LdapGroupsMapping</value>
+  </property>
+  
+  <property>
+    <name>hadoop.security.group.mapping.ldap.url</name>
+    <value>ldap://172.16.175.3/</value>
+  </property>
+  
+  <property>
+    <name>hadoop.security.group.mapping.ldap.bind.user</name>
+    <value>cn=Manager,dc=openiam,dc=org</value>
+  </property>
+  
+  <property>
+    <name>hadoop.security.group.mapping.ldap.bind.password</name>
+    <value>foobar</value>
+  </property>
+  
+  <property>
+    <name>hadoop.security.group.mapping.ldap.base</name>
+    <value>dc=openiam,dc=org</value>
+  </property>
+  
+  <property>
+    <name>hadoop.security.group.mapping.ldap.search.filter.user</name>
+    <value>(&amp;(objectClass=account)(uid={0}))</value>
+  </property>
+  
+  <property>
+    <name>hadoop.security.group.mapping.ldap.search.filter.group</name>
+    <value>(objectClass=groupOfNames)</value>
+  </property>
+  
+  <property>
+    <name>hadoop.security.group.mapping.ldap.search.attr.group.name</name>
+    <value>cn</value>
+  </property>
+
+</configuration>
